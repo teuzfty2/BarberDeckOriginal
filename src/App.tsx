@@ -1,13 +1,18 @@
-
+// Componentes
+import Login from "./components/login";
+import Register from "./components/register";
 
 function App() {
-
+  
 
   return (
     <>
-      cuuuuu
+
+      <Register />
+      <Login />
+      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
