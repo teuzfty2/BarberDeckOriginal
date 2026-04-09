@@ -1,12 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export default function Login({
-  onRegisterRedirect,
-}: {
-  onRegisterRedirect?: () => void;
-}) {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-black font-sans text-[#f0f0f0]">
@@ -26,10 +24,7 @@ export default function Login({
           </div>
 
           <div className="space-y-1">
-            <label
-              htmlFor="email"
-              className="text-xs sm:text-sm font-medium text-[#ccc] block"
-            >
+            <label htmlFor="email" className="text-xs sm:text-sm font-medium text-[#ccc] block">
               E-mail
             </label>
             <input
@@ -43,11 +38,8 @@ export default function Login({
             />
           </div>
 
-          <div className="space-y-1">
-            <label
-              htmlFor="password"
-              className="text-xs mt-2 sm:text-sm font-medium text-[#ccc] block"
-            >
+          <div className="space-y-1 mt-2">
+            <label htmlFor="password" className="text-xs sm:text-sm font-medium text-[#ccc] block">
               Senha
             </label>
             <input
@@ -61,7 +53,8 @@ export default function Login({
           </div>
 
           <button
-            type="submit"
+            type="button"
+            onClick={() => navigate("/dashboard")}
             className="w-full py-3 sm:py-3.5 mt-4 bg-[#f0c060] hover:bg-[#e0b050] text-[#111] font-bold text-sm sm:text-base rounded-xl transition-all shadow-[0_0_15px_rgba(240,192,96,0.2)] hover:shadow-[0_0_25px_rgba(240,192,96,0.4)] hover:-translate-y-0.5 active:translate-y-0"
           >
             Entrar
@@ -70,7 +63,7 @@ export default function Login({
           <div className="mt-6 sm:mt-8 text-center text-xs sm:text-sm text-[#888]">
             Ainda não tem uma conta?{" "}
             <button
-              onClick={onRegisterRedirect}
+              onClick={() => navigate("/register")}
               className="text-[#f0c060] hover:text-[#e0b050] font-medium transition-colors"
             >
               Cadastre-se
