@@ -107,11 +107,8 @@ export function Sidebar() {
         className={`fixed md:relative top-0 left-0 h-screen bg-[#111] border-r border-white/5 z-[70] flex flex-col overflow-hidden shadow-2xl md:shadow-none`}
       >
         {/* Header do Sidebar */}
-        <div className="flex items-center h-[70px] px-4 justify-between border-b border-white/5 shrink-0">
+        <div className="flex items-center h-[70px] p-4 justify-between border-b border-white/5 shrink-0">
           <div className="flex items-center gap-3 overflow-hidden">
-            <div className="w-8 h-8 bg-[#c98805] rounded-lg flex items-center justify-center shrink-0">
-               <span className="text-black font-black text-lg">B</span>
-            </div>
             {isSidebarOpen && (
               <motion.span
                 initial={{ opacity: 0 }}
@@ -123,13 +120,13 @@ export function Sidebar() {
               </motion.span>
             )}
           </div>
-          
           <button
             onClick={toggleSidebar}
-            className="hidden md:flex items-center justify-center w-8 h-8 rounded-lg hover:bg-white/5 transition text-zinc-400"
+            className="hidden md:flex items-center justify-center p-2 rounded-lg hover:bg-white/5 transition text-zinc-400"
           >
             <Menu size={20} />
           </button>
+          
 
           {/* Botão fechar mobile */}
           <button
